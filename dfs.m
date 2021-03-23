@@ -11,7 +11,7 @@ function dfs(s0, S, marked)
         si := Include(s0, i);
         if not si in marked then
             Srest := Exclude(S, i);
-            mk := dfs(si, Srest, marked);
+            mk := $$(si, Srest, marked);
             marked join:= mk;
         end if;
     end for;
