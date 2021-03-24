@@ -56,7 +56,7 @@
         (string-append ","
                        (~a (set-first x))
                        (str-set-aux (set-rest x)))))
-  ;; We need to remove the first comma.
+  ;; We need to remove the leading comma.
   (string-append "{" (substring (str-set-aux s) 1) "}"))
 
 

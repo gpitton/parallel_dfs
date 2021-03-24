@@ -1,5 +1,5 @@
 // Depth-first search implementation in magma.
-// Usage: magma -b "s0:={1}" "n:=6" dfs.m
+// Usage: magma -b "s0:={1}" "n:=6" "mk:={}" dfs.m
 // will explore the elements of the power set of {1..6}
 // that contain s0.
 
@@ -21,6 +21,7 @@ end function;
 
 s0 := eval(s0);
 n := StringToInteger(n);
-print ToString(dfs(s0, {1..n}, {}));
+marked := eval(mk);
+print ToString(dfs(s0, {1..n}, marked));
 quit;
 

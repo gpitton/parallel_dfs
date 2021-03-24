@@ -17,6 +17,21 @@ def process_magma_output(bstdout):
     return sets
 
 
+def set_to_magma(s):
+    """ Returns a magma-readable string representing a python set. """
+    return "{" + ",".join(str(i) for i in s) + "}"
+
+
+def sets_to_magma(S):
+    """ Returns a string representing the set of integer sets S,
+    in a magma-readable format. """
+    if len(S) == 0:
+        return "{}"
+    sts = "{" + ",".join(set_to_magma(s) for s in S) + "}"
+    return sts
+
+
+
 class hashdict(UserDict):
     """ A class useful to realise an immutable, hashable dictionary.
         Note that immutability is not enforced.
